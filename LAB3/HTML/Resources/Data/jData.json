@@ -1,0 +1,16 @@
+{
+  "students":
+  [
+    {"lastName":"Milky",       "firstName":"Way"},
+    {"lastName":"Mayall's",         "firstName":"Galaxy"},
+    {"lastName":"Cigar",      "firstName":"Galaxy"},
+    {"lastName":"Bode's",      "firstName":"Galaxy"},
+    {"lastName":"Hoag's",        "firstName":"Object"},
+    {"lastName":"Sombrero",      "firstName":"Galaxy"},
+    {"lastName":"Tadpole",        "firstName":"Galaxy"},
+    {"lastName":"Whirlpool",        "firstName":"Galaxy"},
+    {"lastName":"Cosmos",        "firstName":"Redshift 7"},
+    {"lastName":"Large-Magellanic",        "firstName":"Cloud"},
+    {"lastName":"Small-Magellanic",        "firstName":"Cloud"}
+  ]
+}
