@@ -16,13 +16,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.share.Sharer;
-import com.facebook.share.model.ShareLinkContent;
-import com.facebook.share.widget.ShareDialog;
 
 public class PomodoroActivity extends Activity {
     public enum State {WORK, REST, NONE, PAUSE};
@@ -40,7 +33,7 @@ public class PomodoroActivity extends Activity {
     public static String workLabel = "Working...", restLabel="Relaxing...", noLabel="Pomodoro Timer", pauseLabel="Paused...";
     public static MediaPlayer mp;
     public static PomodoroActivity MainScreen;
-   // CallbackManager callbackManager;
+
     ShareDialog shareDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,26 +57,7 @@ public class PomodoroActivity extends Activity {
             }
         });
         load();
-       // FacebookSdk.sdkInitialize(getApplicationContext());
-       // callbackManager = CallbackManager.Factory.create();
-        //shareDialog = new ShareDialog(this);
-      /* shareDialog.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
-            @Override
-            public void onSuccess(Sharer.Result result) {
-
-            }
-
-            @Override
-            public void onCancel() {
-
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-
-            }
-        });*/
-
+     
     }
     public static String convertTime(int time){
         String min = time/60+"";
@@ -123,22 +97,7 @@ public class PomodoroActivity extends Activity {
                 SettingsDialog.showDialog();
             }
         });
-      /*facebookButton = (ImageView) findViewById(R.id.facebook);
-        facebookButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (ShareDialog.canShow(ShareLinkContent.class)) {
-                    ShareLinkContent linkContent = new ShareLinkContent.Builder()
-                            .setContentTitle("Pomodoro App")
-                            .setContentDescription(
-                                    "Download right now pomodoro app and change your life!")
-                            .setContentUrl(Uri.parse("http://developers.facebook.com/android"))
-                            .build();
-
-                    shareDialog.show(linkContent);
-                }
-            }
-        });*/
+   
     }
 
     public static void pause(){
@@ -188,7 +147,6 @@ public class PomodoroActivity extends Activity {
         mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                // TODO Auto-generated method stub
                 mp.reset();
                 mp.release();
                mp = null;
